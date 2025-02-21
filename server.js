@@ -9,9 +9,9 @@ const PORT = process.env.PORT || 8000;
 app.use(cors());
 app.use(bodyParser.json());
 
-// Route utama
-app.get("/", (req, res) => {
-    res.send("Server berjalan...");
+// Endpoint Health Check
+app.get('/health', (req, res) => {
+    res.status(200).send('OK');
 });
 
 // Endpoint untuk menerima callback dari Tripay
