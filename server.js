@@ -3,7 +3,7 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8000;
 
 // Middleware
 app.use(cors());
@@ -15,8 +15,8 @@ app.get("/", (req, res) => {
 });
 
 // Endpoint untuk menerima callback dari Tripay
-app.post("/callback", (req, res) => {
-    console.log("Callback diterima:", req.body);
+app.post(`/callback`, (req, res) => {
+    console.log(`Callback diterima:`, req.body);
 
     // Cek validitas data (bisa dicek signature jika perlu)
     const { merchant_ref, status, amount } = req.body;
