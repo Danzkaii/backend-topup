@@ -19,6 +19,10 @@ app.post('/callback', (req, res) => {
 
 // Gunakan PORT dari environment variable atau default 8000
 const PORT = process.env.PORT || 8000;
+app.get('/', (req, res) => {
+    res.send('Backend Topup Game Running!');
+});
+
 app.listen(PORT, () => {
     console.log(`Server berjalan di port ${PORT}`);
 });
